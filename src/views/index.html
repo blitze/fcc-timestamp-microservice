@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Apis and Microservices Projects - Timestamp Microservice</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h2>API Project: Timestamp Microservice</h2>
+			<div class="description">
+				This program exposes an endpoint that you can use to get the
+        corresponding unix Timestamp from a given date string.
+        
+        <h3>Features</h3>
+        <ol>
+          <li>
+              The API endpoint is <code>GET [project_url]/api/timestamp/:date_string?</code>
+          </li>
+          <li>
+              A date string is valid if it can be successfully parsed by <code>new Date(date_string)</code>.
+              Note that the unix timestamp needs to be an <strong>integer</strong> (not a string) specifying <strong>milliseconds</strong>.
+          </li>
+          <li>If the date string is <strong>empty</strong> it will be equivalent to <code>new Date()</code>, i.e. the service uses the current timestamp.</li>
+          <li>If the date string is <strong>valid</strong> the api returns a JSON having the structure
+              <code>{"unix": <date.getTime()>, "utc" : <date.toUTCString()> }
+              e.g. {"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}</code>
+          </li>
+          <li>
+              If the date string is invalid the api returns a JSON having the structure 
+              <code>{ "error" : "Invalid Date" }</code>.
+            </li>
+        </ol>
+
+        <h3>Example Usage</h3>
+        <ul>
+            <li><a href="/api/timestamp/2015-12-25">[project url]/api/timestamp/2015-12-25</a></li>
+            <li><a href="/api/timestamp/1450137600000">[project url]/api/timestamp/1450137600</a></li>
+        </ul>
+
+        <h3>Example Output</h3>
+        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
+      </div>
+      <p>&nbsp;</p>
+      <p id="author">by Daniel Achebodt</p>
+		</div>
+	</body>
+</html>
