@@ -1,5 +1,5 @@
 {
-	"name": "API Project: Timestamp Microservice",
+	"name": "timestamp-microservice",
 	"version": "1.0.0",
 	"description": "FCC API Project",
 	"main": "src/index.js",
